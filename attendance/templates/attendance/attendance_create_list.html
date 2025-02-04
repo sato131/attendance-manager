@@ -1,0 +1,66 @@
+<!--勤怠登録一覧-->
+{% extends 'attendance/base.html' %} {% block content %}
+<div class="container">
+  <h2>{{ year }}年{{ month }}月の勤怠一覧</h2>
+
+  <!-- 月選択 -->
+  <div class="month-selector">
+    <a href="?year={{ year }}&month={{ month|add:'-1' }}">&lt; 前月</a>
+    <span>{{ year }}年{{ month }}月</span>
+    <a href="?year={{ year }}&month={{ month|add:'1' }}">次月 &gt;</a>
+  </div>
+
+  <table>
+    <tr>
+      <th>日付</th>
+      <th>出勤時間</th>
+      <th>退勤時間</th>
+      <th>休憩時間</th>
+      <th>勤務時間</th>
+      <th>操作</th>
+    </tr>
+    {% for date_item in date_list %}
+    <tr>
+      <td>{{ date_item.date|date:"Y/m/d (D)" }}</td>
+      {% if date_item.attendance %}
+      <td>{{ date_item.attendance.start_time|default:'-' }}</td>
+      <td>{{ date_item.attendance.end_time|default:'-' }}</td>
+      <td>{{ date_item.attendance.break_time|default:'-' }}</td>
+      <td>
+        {{ date_item.attendance.working_hours|floatformat:1|default:'-' }}
+      </td>
+      <td>
+        <a
+          href="{% url 'attendance:attendance_update' date_item.attendance.pk %}"
+          class="operation-btn edit-btn"
+        >
+          編集
+        </a>
+      </td>
+      {% else %}
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        <a
+          href="{% url 'attendance:attendance_create' %}?selected_date={{ date_item.date|date:'Y-m-d' }}"
+          class="operation-btn create-btn"
+        >
+          登録
+        </a>
+      </td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+    <!-- 合計行を追加 -->
+    <tr class="total-row">
+      <td colspan="4" class="total-label">合計勤務時間</td>
+      <td>{{ total_working_hours }}</td>
+      <td>-</td>
+    </tr>
+  </table>
+
+  <a class="back-btn" href="{% url 'attendance:attendance_list' %}">戻る</a>
+</div>
+{% endblock %}

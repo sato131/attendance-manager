@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>勤怠管理</title>
+    <link rel="stylesheet" href="{% static 'css/bace.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/pages/component.css' %}" />
+    {% block extra_css %}{% endblock %}
+  </head>
+  <body>
+    {% block content %}{% endblock content %}
+  </body>
+</html>

@@ -1,0 +1,38 @@
+{% extends 'attendance/base.html' %} {% block content %}
+<div class="salary-container">
+  <h2>給与計算</h2>
+
+  <!-- 月選択 -->
+  <div class="month-selector">
+    <a href="?year={{ year }}&month={{ month|add:'-1' }}">&lt; 前月</a>
+    <span>{{ year }}年{{ month }}月</span>
+    <a href="?year={{ year }}&month={{ month|add:'1' }}">次月 &gt;</a>
+  </div>
+
+  <div class="salary-info">
+    <div class="salary-detail">
+      <h3>{{ month }}月の給与明細</h3>
+      <table class="salary-table">
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>合計勤務時間</td>
+          <td>{{ total_working_hours }}時間</td>
+        </tr>
+        <tr>
+          <td>時給</td>
+          <td>{{ hourly_rate }}円</td>
+        </tr>
+        <tr class="total-row">
+          <td>給与合計</td>
+          <td>{{ total_salary }}円</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <a class="back-btn" href="{% url 'attendance:attendance_list' %}">戻る</a>
+</div>
+{% endblock %}

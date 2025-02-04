@@ -1,0 +1,13 @@
+{% extends 'attendance/base.html' %} {% block content %}
+
+<div class="container">
+  <h1>ログイン</h1>
+  <form method="post">
+    {% csrf_token %} {{ form.as_p}}
+    <button class="loginlogout-btn" type="submit">ログイン</button>
+  </form>
+  <div>
+    <a class="back-btn" href="{% url 'attendance:attendance_list' %}">戻る</a>
+  </div>
+  {% endblock content %}
+</div>

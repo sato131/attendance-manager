@@ -1,0 +1,449 @@
+/* 勤怠登録 */
+
+.register-btn {
+  border-radius: 7px;
+  border: 1px solid;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background-color: rgb(144, 202, 249);
+}
+
+/* 勤怠一覧 */
+
+.attendance-button {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.user-info {
+  font-size: 16px;
+}
+
+.attendance-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 10px;
+  margin-top: 0;
+  margin-bottom: 18px;
+  background-color: rgb(157, 165, 189);
+  color: black;
+  text-decoration: none;
+  border-radius: 7px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: rgb(37, 75, 180);
+  color: white;
+}
+
+/* ログインログアウト */
+
+.loginlogout-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 18px auto;
+  border-radius: 5px;
+  border: 1px solid;
+  transition: 0.2s;
+}
+
+.loginlogout-btn:hover {
+  background-color: rgb(144, 202, 249);
+}
+
+/* 戻るボタン */
+
+.back-btn {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.new-user-back-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+/* 勤怠一覧 */
+
+.month-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: white;
+}
+
+th,
+td {
+  border: 1px solid #dee2e6;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+/* テーブルの行の背景色を交互に変更 */
+tr:nth-child(odd) {
+  background-color: rgb(146, 188, 202);
+}
+
+tr:nth-child(even) {
+  background-color: #e2e2e2;
+}
+
+/* 勤怠登録フォーム */
+.attendance-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 24px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.attendance-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #555;
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-group input[type="date"],
+.form-group input[type="time"] {
+  cursor: pointer;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.register-btn {
+  padding: 12px 30px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #2980b9;
+}
+
+.back-btn {
+  padding: 12px 30px;
+  background-color: #95a5a6;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #7f8c8d;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .attendance-form-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .register-btn,
+  .back-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* 勤怠登録フォームのクリック可能な入力欄 */
+.clickable {
+  cursor: pointer;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding-right: 30px; /* アイコンのためのスペース */
+}
+
+.input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #666;
+}
+
+/* 入力欄のホバー効果 */
+.form-group.clickable:hover .input-wrapper {
+  background-color: rgba(52, 152, 219, 0.05);
+  border-radius: 5px;
+}
+
+/* 入力欄がクリックされたときの視覚的フィードバック */
+.form-group.clickable:active .input-wrapper {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* 入力欄のスタイル調整 */
+.form-group input[type="date"],
+.form-group input[type="time"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* カレンダーアイコンを非表示（カスタムアイコンを使用するため） */
+.form-group input[type="date"]::-webkit-calendar-picker-indicator,
+.form-group input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 操作ボタン */
+.operation-btn {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.create-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.create-btn:hover {
+  background-color: #2980b9;
+}
+
+.edit-btn {
+  background-color: rgb(206, 90, 148);
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: rgb(156, 71, 114);
+  color: white;
+}
+
+/* 給与計算ページ */
+.salary-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.salary-info {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.salary-detail h3 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.salary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.salary-table th,
+.salary-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.salary-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  width: 40%;
+}
+
+.salary-table .total-row {
+  background-color: #f1f8ff;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.salary-table .total-row td {
+  border-top: 2px solid #3498db;
+}
+
+/* ユーザー情報編集 */
+.user-edit-btn {
+  display: inline-block;
+  padding: 6px 10px;
+  background-color: rgb(157, 165, 189);
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 14px 0;
+  transition: background-color 0.3s ease;
+}
+
+.user-edit-btn:hover {
+  background-color: rgb(37, 75, 180);
+  color: white;
+  text-decoration: none;
+}
+
+.user-edit-btn:active {
+  transform: translateY(1px);
+}
+
+/* 新規ユーザー登録 */
+.register-user-btn {
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px 5px;
+  margin: 5px 0;
+  border: 1px solid black;
+  transition: background-color 0.3s ease;
+}
+
+.register-user-btn:hover {
+  background-color: rgb(37, 75, 180);
+  color: white;
+}
+
+.password-change {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.password-change a {
+  text-decoration: none;
+  color: purple;
+}
+
+.password-change a:hover {
+  text-decoration: underline;
+}
+
+/* パスワード変更 */
+.password-change-btn {
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px 5px;
+  margin: 5px 0;
+  border: 1px solid black;
+  transition: background-color 0.3s ease;
+}
+
+.password-change-btn:hover {
+  background-color: rgb(37, 75, 180);
+  color: white;
+}

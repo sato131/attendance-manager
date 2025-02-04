@@ -1,0 +1,19 @@
+<!--新規ユーザー登録-->
+
+{% extends 'attendance/base.html' %} {% block content %}
+<div class="container">
+  <h2>新規ユーザー登録</h2>
+  <form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button class="register-user-btn" type="submit">登録</button>
+    <a class="new-user-back-btn" href="{% url 'attendance:attendance_list' %}"
+      >戻る</a
+    >
+  </form>
+  <div class="password-change">
+    <a href="{% url 'attendance:password_change' %}" class="btn btn-secondary"
+      >パスワードを変更</a
+    >
+  </div>
+</div>
+{% endblock content %}
