@@ -26,7 +26,10 @@ SECRET_KEY = "django-insecure-07!k((4et%qz$y=&lexk$t10d&cuc&=030zg&qaooxfhr%&yjw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '.amplifyapp.com',  # Amplifyのドメイン
+    'main.d1u624k974vbd6.amplifyapp.com'  # あなたの具体的なドメイン
+]
 
 
 # Application definition
