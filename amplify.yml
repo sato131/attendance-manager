@@ -1,0 +1,14 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - pip install -r requirements.txt
+        - python manage.py collectstatic --noinput
+  artifacts:
+    baseDirectory: /
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*

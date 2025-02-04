@@ -139,12 +139,13 @@ LOGIN_URL = 'attendance:login'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-ALLOWED_HOSTS = ['*']  # 本番環境では適切なドメインに制限することを推奨
+ALLOWED_HOSTS = ['*', '.amplifyapp.com']
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# Debug設定
+DEBUG = False  # 本番環境ではFalse
+
+# CSRF設定
+CSRF_TRUSTED_ORIGINS = ['https://*.amplifyapp.com']
